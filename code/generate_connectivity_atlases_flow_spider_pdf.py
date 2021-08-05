@@ -88,7 +88,13 @@ class PDF(FPDF):
 html_info = parse_report('report.html')
 METHODS = """This pipeline facilitates the creation of atlases for Connectoflow [1].
 It creates atlases from the Freesurfer output: Brainnetome [2], Glasser [3], Schaefer[4],
-Lausanne multi-scales [5] and lobes.
+Lausanne multi-scales [5] and lobes. All atlases are free of WM and CSF labels, ready for connectomics.
+All output atlases have the following files associated with them:
+- atlas_*_v4.nii.gz (parcellation as computed)
+- atlas_*_v4_dilate.nii.gz (parcellation with cortical labels dilate into the WM)
+- atlas_*_v4_LUT.json (Links the labels number to its name)
+- atlas_*_v4_LUT.txt (Links the labels number to its name and color scheme for Freeview)
+- atlas_*_v4_labels_list.txt (Contains the list of expected labels number)
 """
 
 REFERENCES = """[1] Rheault, Francois, et al. "Connectoflow: A cutting-edge Nextflow pipeline for structural connectomics",
