@@ -1,0 +1,242 @@
+---
+moreauto: true
+procversion: 1.0.0
+procname: connectoflow
+
+inputs:
+  default:
+    container_path: connectoflow_v1.0.0.simg
+  xnat:
+    scans:
+      - name: scan_t1
+        types: T1,MPRAGE,T1w,T1_3DAXIAL,MPRAGE_SIEMENS_DEFACED
+        resources:
+          - resource: NIFTI
+            ftype: FILE
+            varname: t1_file
+            fdest: t1.nii.gz
+            fmatch: '*.nii.gz'
+    attrs:
+      - varname: project
+        object: session
+        attr: project
+      - varname: subject
+        object: session
+        attr: subject_label
+      - varname: session
+        object: session
+        attr: label
+outputs:
+  - path: 'report.pdf'
+    type: FILE
+    resource: PDF
+  - path: 'report.html'
+    type: FILE
+    resource: REPORT
+  - path: 'atlas_schaefer_400_v3.nii.gz'
+    type: FILE
+    resource: LABELS
+  - path: 'atlas_schaefer_400_v3_dilate.nii.gz'
+    type: FILE
+    resource: LABELS
+  - path: 'atlas_schaefer_400_v3_labels_list.txt'
+    type: FILE
+    resource: LABELS_UTILS
+  - path: 'atlas_schaefer_400_v3_LUT.json'
+    type: FILE
+    resource: LABELS_UTILS
+  - path: 'atlas_schaefer_400_v3_LUT.txt'
+    type: FILE
+    resource: LABELS_UTILS
+
+  - path: 'atlas_glasser_v3.nii.gz'
+    type: FILE
+    resource: LABELS
+  - path: 'atlas_glasser_v3_dilate.nii.gz'
+    type: FILE
+    resource: LABELS
+  - path: 'atlas_glasser_v3_labels_list.txt'
+    type: FILE
+    resource: LABELS_UTILS
+  - path: 'atlas_glasser_v3_LUT.json'
+    type: FILE
+    resource: LABELS_UTILS
+  - path: 'atlas_glasser_v3_LUT.txt'
+    type: FILE
+    resource: LABELS_UTILS
+
+  - path: 'atlas_freesurfer_v3.nii.gz'
+    type: FILE
+    resource: LABELS
+  - path: 'atlas_freesurfer_v3_dilate.nii.gz'
+    type: FILE
+    resource: LABELS
+  - path: 'atlas_freesurfer_v3_labels_list.txt'
+    type: FILE
+    resource: LABELS_UTILS
+  - path: 'atlas_freesurfer_v3_LUT.json'
+    type: FILE
+    resource: LABELS_UTILS
+  - path: 'atlas_freesurfer_v3_LUT.txt'
+    type: FILE
+    resource: LABELS_UTILS
+
+  - path: 'atlas_schaefer_100_v3.nii.gz'
+    type: FILE
+    resource: LABELS
+  - path: 'atlas_schaefer_100_v3_dilate.nii.gz'
+    type: FILE
+    resource: LABELS
+  - path: 'atlas_schaefer_100_v3_labels_list.txt'
+    type: FILE
+    resource: LABELS_UTILS
+  - path: 'atlas_schaefer_100_v3_LUT.json'
+    type: FILE
+    resource: LABELS_UTILS
+  - path: 'atlas_schaefer_100_v3_LUT.txt'
+    type: FILE
+    resource: LABELS_UTILS
+
+  - path: 'atlas_schaefer_200_v3.nii.gz'
+    type: FILE
+    resource: LABELS
+  - path: 'atlas_schaefer_200_v3_dilate.nii.gz'
+    type: FILE
+    resource: LABELS
+  - path: 'atlas_schaefer_200_v3_labels_list.txt'
+    type: FILE
+    resource: LABELS_UTILS
+  - path: 'atlas_schaefer_200_v3_LUT.json'
+    type: FILE
+    resource: LABELS_UTILS
+  - path: 'atlas_schaefer_200_v3_LUT.txt'
+    type: FILE
+    resource: LABELS_UTILS
+
+  - path: 'atlas_schaefer_400_v3.nii.gz'
+    type: FILE
+    resource: LABELS
+  - path: 'atlas_schaefer_400_v3_dilate.nii.gz'
+    type: FILE
+    resource: LABELS
+  - path: 'atlas_schaefer_400_v3_labels_list.txt'
+    type: FILE
+    resource: LABELS_UTILS
+  - path: 'atlas_schaefer_400_v3_LUT.json'
+    type: FILE
+    resource: LABELS_UTILS
+  - path: 'atlas_schaefer_400_v3_LUT.txt'
+    type: FILE
+    resource: LABELS_UTILS
+
+  - path: 'lausanne_2008_scale_1.nii.gz'
+    type: FILE
+    resource: LABELS
+  - path: 'lausanne_2008_scale_1_dilate.nii.gz'
+    type: FILE
+    resource: LABELS
+  - path: 'lausanne_2008_scale_1_labels_list.txt'
+    type: FILE
+    resource: LABELS_UTILS
+  - path: 'lausanne_2008_scale_1_LUT.json'
+    type: FILE
+    resource: LABELS_UTILS
+  - path: 'lausanne_2008_scale_1_LUT.txt'
+    type: FILE
+    resource: LABELS_UTILS
+
+  - path: 'lausanne_2008_scale_2.nii.gz'
+    type: FILE
+    resource: LABELS
+  - path: 'lausanne_2008_scale_2_dilate.nii.gz'
+    type: FILE
+    resource: LABELS
+  - path: 'lausanne_2008_scale_2_labels_list.txt'
+    type: FILE
+    resource: LABELS_UTILS
+  - path: 'lausanne_2008_scale_2_LUT.json'
+    type: FILE
+    resource: LABELS_UTILS
+  - path: 'lausanne_2008_scale_2_LUT.txt'
+    type: FILE
+    resource: LABELS_UTILS
+
+  - path: 'lausanne_2008_scale_3.nii.gz'
+    type: FILE
+    resource: LABELS
+  - path: 'lausanne_2008_scale_3_dilate.nii.gz'
+    type: FILE
+    resource: LABELS
+  - path: 'lausanne_2008_scale_3_labels_list.txt'
+    type: FILE
+    resource: LABELS_UTILS
+  - path: 'lausanne_2008_scale_3_LUT.json'
+    type: FILE
+    resource: LABELS_UTILS
+  - path: 'lausanne_2008_scale_3_LUT.txt'
+    type: FILE
+    resource: LABELS_UTILS
+
+  - path: 'lausanne_2008_scale_4.nii.gz'
+    type: FILE
+    resource: LABELS
+  - path: 'lausanne_2008_scale_4_dilate.nii.gz'
+    type: FILE
+    resource: LABELS
+  - path: 'lausanne_2008_scale_4_labels_list.txt'
+    type: FILE
+    resource: LABELS_UTILS
+  - path: 'lausanne_2008_scale_4_LUT.json'
+    type: FILE
+    resource: LABELS_UTILS
+  - path: 'lausanne_2008_scale_4_LUT.txt'
+    type: FILE
+    resource: LABELS_UTILS
+
+  - path: 'lausanne_2008_scale_5.nii.gz'
+    type: FILE
+    resource: LABELS
+  - path: 'lausanne_2008_scale_5_dilate.nii.gz'
+    type: FILE
+    resource: LABELS
+  - path: 'lausanne_2008_scale_5_labels_list.txt'
+    type: FILE
+    resource: LABELS_UTILS
+  - path: 'lausanne_2008_scale_5_LUT.json'
+    type: FILE
+    resource: LABELS_UTILS
+  - path: 'lausanne_2008_scale_5_LUT.txt'
+    type: FILE
+    resource: LABELS_UTILS
+
+command: >-
+  singularity run
+  --home $JOBDIR
+  --bind $JOBDIR:/tmp
+  --containall
+  --cleanenv
+  --bind $INDIR:/INPUTS
+  --bind  $OUTDIR:/OUTPUTS
+  --bind $JOBDIR:/TMP
+  {container_path}
+  {subject}
+  {session}
+  {dwi}
+  {bval}
+  {bvec}
+  {peaks}
+  {fodf}
+  {affine}
+  {warp}
+  {ensemble_tracking}
+  {t1_file}
+  {label}
+
+attrs:
+  xsitype: proc:genProcData
+  walltime: "72:00:00"
+  memory: 16384
+  ppn: 1
+
+jobtemplate: job_template.txt
+
