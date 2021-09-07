@@ -1,8 +1,8 @@
 
 
-# connectivity_atlases_spider
+# connectivity atlases spider
 This pipeline facilitates the creation of atlases for Connectoflow [1].
-It creates atlases from the Freesurfer output: Brainnetome [2], Glasser [3], Schaefer[4], Lausanne multi-scales [5] and lobes. All atlases are free of WM and CSF labels, ready for connectomics.
+It creates atlases from the Freesurfer output: Brainnetome [2], Glasser [3], Schaefer [4], Lausanne multi-scales [5] and lobes. All atlases are free of WM and CSF labels, ready for connectomics.
 All output atlases have the following files associated with them:
 - atlas_*_v4.nii.gz (parcellation as computed)
 - atlas_*_v4_dilate.nii.gz (parcellation with cortical labels dilate into the WM)

@@ -8,8 +8,6 @@ From: centos:centos7
     wget -O freesurfer-linux-centos7_x86_64-dev.tar.gz "https://vanderbilt365-my.sharepoint.com/:u:/g/personal/francois_rheault_vanderbilt_edu/EbxZjN7BhmpFrGJfotDRUsYBhzG-ubPQT4GA_Vx07QkQwg?download=1"
     tar zxvf freesurfer-linux-centos7_x86_64-dev.tar.gz -C $SINGULARITY_ROOTFS/freesurfer/
     
-    wget -O $SINGULARITY_ROOTFS/license.txt "https://vanderbilt365-my.sharepoint.com/:t:/g/personal/francois_rheault_vanderbilt_edu/EbdzkBldqPBKjRuwBo4wKfABjlT9_EWgngeYKJ2m6CbOSQ?download=1"
-    
     wget -O $SINGULARITY_ROOTFS/fs_install_mcr.sh "https://vanderbilt365-my.sharepoint.com/:u:/g/personal/francois_rheault_vanderbilt_edu/EXnu9nlx7lFBjIikV8D6a2MBfwoREkem_X5Ui70aTmG3Mg?download=1"
     
     wget -O FS_BN_GL_SF_utils.tar "https://vanderbilt365-my.sharepoint.com/:u:/g/personal/francois_rheault_vanderbilt_edu/EYfQBZZ5o0JClaKqG_bm3NoBcFE-pTUZzFw9lWARqCHoTw?download=1"
@@ -44,7 +42,6 @@ From: centos:centos7
     make && make install
     echo 'will cite' | parallel --citation 1> /dev/null 2> /dev/null &
 
-    mv $SINGULARITY_ROOTFS/license.txt $FREESURFER_HOME/
     mv $SINGULARITY_ROOTFS/fs_install_mcr.sh $FREESURFER_HOME/bin/
     bash /freesurfer/freesurfer/bin/fs_install_mcr.sh R2012b
 

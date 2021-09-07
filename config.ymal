@@ -229,6 +229,7 @@ command: >-
   singularity run
   --home $JOBDIR
   --bind $JOBDIR:/tmp
+  --bin /data/mcr/centos7/FS6/license.txt:/freesurfer/freesurfer/license.txt
   --containall
   --cleanenv
   --bind $INDIR:/INPUTS
