@@ -87,7 +87,7 @@ From: centos:centos7
 
     git clone https://github.com/frheault/freesurfer-nf.git
     cd freesurfer-nf/
-    git checkout 19f3f5d
+    git checkout b1e408b
     sed -i 's/scratch = true/scratch = false/g' $SINGULARITY_ROOTFS/freesurfer-nf/nextflow.config
 
     # Make custom folders
