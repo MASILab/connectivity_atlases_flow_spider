@@ -5,12 +5,14 @@ From: centos:centos7
     rm -rf $SINGULARITY_ROOTFS/freesurfer
     mkdir $SINGULARITY_ROOTFS/freesurfer
 
-    wget -O freesurfer-linux-centos7_x86_64-dev.tar.gz "https://vanderbilt365-my.sharepoint.com/:u:/g/personal/francois_rheault_vanderbilt_edu/EbxZjN7BhmpFrGJfotDRUsYBhzG-ubPQT4GA_Vx07QkQwg?download=1"
+    #wget -O freesurfer-linux-centos7_x86_64-dev.tar.gz "https://www.dropbox.com/s/qhhje2ond0ja7px/freesurfer-linux-centos7_x86_64-dev.tar.gz?dl=0?download=1"
     tar zxvf freesurfer-linux-centos7_x86_64-dev.tar.gz -C $SINGULARITY_ROOTFS/freesurfer/
-    
-    wget -O $SINGULARITY_ROOTFS/fs_install_mcr.sh "https://vanderbilt365-my.sharepoint.com/:u:/g/personal/francois_rheault_vanderbilt_edu/EXnu9nlx7lFBjIikV8D6a2MBfwoREkem_X5Ui70aTmG3Mg?download=1"
-    
-    wget -O FS_BN_GL_SF_utils.tar "https://vanderbilt365-my.sharepoint.com/:u:/g/personal/francois_rheault_vanderbilt_edu/EYfQBZZ5o0JClaKqG_bm3NoBcFE-pTUZzFw9lWARqCHoTw?download=1"
+
+    wget -O $SINGULARITY_ROOTFS/fs_install_mcr.sh "https://www.dropbox.com/s/v54cc4v6e6im0i9/fs_install_mcr.sh?dl=0d?download=1"
+
+    wget -O $SINGULARITY_ROOTFS/license.txt "https://www.dropbox.com/s/zs4k3bcfxderj58/license.txt?dl=0"
+
+    #wget -O FS_BN_GL_SF_utils.tar "https://www.dropbox.com/s/zzptxby9pf5lpih/FS_BN_GL_SF_utils.tar?dl=0?download=1"
     tar -xf FS_BN_GL_SF_utils.tar -C $SINGULARITY_ROOTFS/
 
     mkdir $SINGULARITY_ROOTFS/pybin $SINGULARITY_ROOTFS/CODE/
@@ -19,6 +21,7 @@ From: centos:centos7
 %environment
     export FREESURFER_HOME=/freesurfer/freesurfer/
     . /freesurfer/freesurfer/SetUpFreeSurfer.sh
+    export FS_LICENSE=$SINGULARITY_ROOTFS/license.txt
 
 %post
     export FREESURFER_HOME=/freesurfer/freesurfer/
@@ -75,7 +78,7 @@ From: centos:centos7
     pip install fpdf
     pip install scikit-image
     git clone https://github.com/frheault/scilpy.git $SINGULARITY_ROOTFS/scilpy/ && cd $SINGULARITY_ROOTFS/scilpy/
-    git checkout cd32812
+    git checkout 7f9aebe3
     pip3.7 install -r requirements.txt
     python3.7 setup.py develop
     cd ../
